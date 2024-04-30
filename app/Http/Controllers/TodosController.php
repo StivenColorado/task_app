@@ -27,8 +27,9 @@ class TodosController extends Controller
     // show
     public function show($id)
     {
-        $todo = Todo::find($id);
-        return view('todos.show', ['todo' => $todo]);
+        $todo = Todo::with('category')->find($id);
+        $categories = Category::all();
+        return view('todos.show', ['todo' => $todo, 'categories' => $categories]);
     }
 
     // index para mostrar todos los elementos
@@ -43,7 +44,14 @@ class TodosController extends Controller
     {
         $todo = Todo::find($id);
         $todo->title =  $request->title;
+        //recibir categoria y guardarla
+        $category = Category::find($request->category_id);
+        if($category){
+            $todo->category_id = $category->id;
+        }
+
         $todo->save();
+
         return redirect()->route('todos')->with('success', 'Actualizado correctamente');
     }
     // destroy para eliminar un todo

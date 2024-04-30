@@ -18,6 +18,14 @@
                 <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp"
                     placeholder="Enter a task" value="{{ $todo->title }}">
             </div>
+            <div class="mb-3">
+                <label for="">categoria actual: {{ $todo->category->name }} </label>
+                <select name="category_id" class="form-select">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <button type="submit" class="btn btn-primary">Actualizar tarea</button>
         </form>
     </div>
