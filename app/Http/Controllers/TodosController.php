@@ -49,7 +49,6 @@ class TodosController extends Controller
         if($category){
             $todo->category_id = $category->id;
         }
-
         $todo->save();
 
         return redirect()->route('todos')->with('success', 'Actualizado correctamente');

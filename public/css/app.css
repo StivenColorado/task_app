@@ -1,0 +1,39 @@
+:root{
+    --gray-custom:#2e2e2e;
+    --gray-custom-dark:#262424;
+    --light-text:white;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    background:var(--gray-custom);
+}
+/* colores de fondo */
+.bg-custom-dark{
+    background:var(--gray-custom-dark);
+}
+
+.button-custom{
+    background-color: var(--light-text);
+    color: var(--gray-custom);
+}
+.button-custom:hover{
+    background-color: rgb(103, 100, 100);
+    color: var(--light-text);
+}
+/* colores texto y fondo de input y select */
+.text-white{
+    color: var(--light-text);
+}
+.text-white::placeholder{
+    color: var(--light-text);
+}
+/* lista de items en categorias y tareas */
+.item-todo{
+    background:rgb(93, 92, 92);
+}
+.item-todo:hover{
+    background:rgb(114, 114, 114);
+    cursor: pointer;
+}
+
+

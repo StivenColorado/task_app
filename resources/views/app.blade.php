@@ -9,30 +9,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <title>home tareas</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <title>{{ env('APP_NAME') }}</title>
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
+
     </style>
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{route('todos')}}"> Tareas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('categories.index')}}">Categorias</a>
-                    </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom-dark justify-content-center">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <a class="navbar-brand text-white" href="#">My{{ env('APP_NAME') }}App</a>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="{{ route('todos') }}">Tareas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('categories.index') }}">Categorias</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-                </ul>
-            </div>
-        </nav>
-@yield('content')
+    @yield('content')
 </body>
 
 </html>

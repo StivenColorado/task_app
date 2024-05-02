@@ -15,18 +15,18 @@
                 @enderror
 
                 <div class="mb-3">
-                    <label for="title">Titulo de la tarea</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="Enter a task" value="{{$category->name}}">
+                    <label for="title" class="pt-1 m-1 text-white fs-5 fw-bold">Titulo de la tarea</label>
+                    <input type="text" class="form-control text-white" name="name" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter a task" value="{{$category->name}}" style="background: #303030;">
                 </div>
 
                 <div class="mb-3">
-                    <label for="color">Color de la categoria</label>
-                    <input type="color" class="form-control" name="color" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="Enter a color" value="{{$category->color}}">
+                    <label for="color" class="pt-1 m-1 text-white fs-5 fw-bold">Color de la categoria</label>
+                    <input type="color" class="form-control text-white" name="color" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter a color" value="{{$category->color}}" style="background: #303030;">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="submit" class="btn button-custom rounded mt-3">Actualizar</button>
             </form>
 
         </div>
